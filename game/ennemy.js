@@ -1,8 +1,9 @@
-var Ennemy = function(color, position){//,axe) {
+var Ennemy = function(name, color, position, direction) {
 
+    this.name = name;
     this.position = position;
-    this.life = 1;
-    //this.axe = axe;
+    this.life = 2;
+    this.direction = direction;
     this.speed = 0;
 
     this.material = new THREE.MeshLambertMaterial({
@@ -11,7 +12,7 @@ var Ennemy = function(color, position){//,axe) {
 
     var singleGeometry = new THREE.Geometry();
 
-    vehiculeMesh = new THREE.ConeGeometry(20, 2, 2);
+    vehiculeMesh = new THREE.ConeGeometry(5, 20, 32);
     this.graphic = new THREE.Mesh(vehiculeMesh, this.material);
     this.graphic.position.z = 6;
 

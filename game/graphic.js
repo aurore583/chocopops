@@ -36,18 +36,19 @@ function init()
     scene.add(tmpGround);
     scene.add(player1.graphic);
 
-    player2 = new Ennemy(0xffff00, new THREE.Vector2(46, 4)); 
+    player2 = new Ennemy("player2", 0xffff00, new THREE.Vector2(46, 4), 0); 
     player2.position = scene.position;
-    color = 0x00ff00;
     scene.add(player2.graphic);
 
-    /*for (x = 0; x <= (ground.HEIGHT*ground.WIDTH)/2; x++)
+    /* Add multiple ennemies
+    for (x = 0; x <= (ground.HEIGHT*ground.WIDTH)/2; x++)
     {
         ennemy_x = Math.random() * (ground.WIDTH);
         ennemy_y = Math.random() * (ground.HEIGHT);
         new_ennemy = new Enemy(0xffff00, new THREE.Vector2(ennemy_x, ennemy_y),)
         scene.add(new_ennemy.graphic);
     }*/
+    
     light1 = new Light("sun", 0xffffff, "0,0,340");
     scene.add(light1);
 }
