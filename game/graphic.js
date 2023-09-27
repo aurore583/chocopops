@@ -25,8 +25,9 @@ function init()
     noGround = [];
     ground = new Ground(0xffffff, WIDTH, HEIGHT, 10);
     
-    player1 = new Player("player1", 0xffff00, new THREE.Vector2(50, 0), 0);
-    color = 0x00ff00
+    player1 = new Player("player1", 0xffff00, new THREE.Vector2(50, 0), 0); 
+    player1.position = scene.position;
+    color = 0x00ff00;
     tmpGround = new THREE.Mesh(
         new THREE.PlaneGeometry(sizeOfTileX-10, sizeOfTileY-10),
         new THREE.MeshLambertMaterial({color: color, transparent: true, opacity: 0.6}));
@@ -34,6 +35,19 @@ function init()
         tmpGround.position.y = player1.position.y;
     scene.add(tmpGround);
     scene.add(player1.graphic);
+
+    player2 = new Ennemy(0xffff00, new THREE.Vector2(46, 4)); 
+    player2.position = scene.position;
+    color = 0x00ff00;
+    scene.add(player2.graphic);
+
+    /*for (x = 0; x <= (ground.HEIGHT*ground.WIDTH)/2; x++)
+    {
+        ennemy_x = Math.random() * (ground.WIDTH);
+        ennemy_y = Math.random() * (ground.HEIGHT);
+        new_ennemy = new Enemy(0xffff00, new THREE.Vector2(ennemy_x, ennemy_y),)
+        scene.add(new_ennemy.graphic);
+    }*/
     light1 = new Light("sun", 0xffffff, "0,0,340");
     scene.add(light1);
 }
